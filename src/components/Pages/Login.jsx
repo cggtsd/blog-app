@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Base } from '../Base'
 import { Col, Container, Row,Card, CardHeader, CardBody, Form, FormGroup, Label, Input, Button } from 'reactstrap'
 import { toast } from 'react-toastify'
-import { loginUser } from '../user-service'
+import { loginUser } from '../../services/user-service'
 import { doLogin } from '../../auth'
 import { useNavigate } from 'react-router-dom'
 export const Login = () => {
@@ -44,13 +44,10 @@ export const Login = () => {
       })
       .catch(error=>{
          console.log(error)
-         if(error.response.status===401 ){
+         if(error.response.status===401 || error.response.status===404){
             toast.error(error.response.message)
          }
-         else if(error.response.status===404){
-            toast.error(error.response.message)
-         }
-         else
+        else
          toast.error('Something went wrong on server !!')
       })
    }

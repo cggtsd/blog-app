@@ -1,4 +1,4 @@
-import { myAxios } from "../services/helper"
+import { myAxios } from "./helper"
 
 export const signup=data=>{
     return myAxios.post('/auth/register',data)

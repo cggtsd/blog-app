@@ -2,9 +2,9 @@ import React, { useState } from 'react'
 import { Base } from '../Base'
 import { Col, Container, Row,Card, CardHeader, CardBody, Form, FormGroup, Label, Input, Button ,
 FormFeedback} from 'reactstrap'
+import { signup } from '../../services/user-service'
 
-import { signup } from '../user-service'
-import { toast } from 'react-toastify'
+ import { toast } from 'react-toastify'
 
 export const Signup = () => {
 
